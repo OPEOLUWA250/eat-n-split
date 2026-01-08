@@ -37,6 +37,7 @@ body {
   background-color: var(--color-medium);
   color: #343a40;
   padding: 0.8rem 1.2rem;
+  padding-top: 1.2rem;
   border: none;
   border-radius: 7px;
   font-weight: bold;
@@ -45,7 +46,7 @@ body {
 }
 
 .button:hover {
-  background-color: var(--color-dark);
+  background-color: var(--color-medium);
 }
 
 .sidebar ul {
@@ -64,6 +65,7 @@ body {
   column-gap: 1.6rem;
 
   padding: 1.2rem;
+  padding-top: 1.6rem;
   border-radius: 7px;
   transition: 0.5s;
 }
@@ -92,6 +94,10 @@ body {
 .sidebar li .button {
   grid-row: span 2;
   grid-column: 3;
+}
+
+.sidebar li .button:hover {
+  background-color: var(--color-medium);
 }
 
 .sidebar > .button {
@@ -166,4 +172,89 @@ form h2 {
   text-transform: uppercase;
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  body {
+    padding: 1rem;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 2rem;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar ul {
+    gap: 0.8rem;
+  }
+
+  .sidebar li {
+    grid-template-columns: 4rem 1fr auto;
+    padding: 0.8rem;
+  }
+
+  .sidebar li .button {
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
+  }
+
+  .form-split-bill {
+    grid-template-columns: 1fr;
+    padding: 1.6rem;
+  }
+
+  form .button {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .form-add-friend {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .sidebar > .button {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 40%;
+  }
+
+  .sidebar li {
+    grid-template-columns: 3.5rem 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .sidebar li img {
+    grid-row: span 3;
+  }
+
+  .sidebar li h3 {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .sidebar li p {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .sidebar li .button {
+    grid-column: 2;
+    grid-row: 3;
+    padding: 0.5rem 0.8rem;
+  }
 }
